@@ -6,13 +6,17 @@ def get_beautiful_permutation(n):
             o_arr.append(i)
         else:
             e_arr.append(i)
+    
     if e_arr[-1] - o_arr[0] == 1:
         print("NO SOLUTION")
     else:
         e_arr.extend(o_arr)
-        print(e_arr)
+        print(" ".join(map(str,e_arr)))
 
 
 if __name__ == "__main__":
     n = int(input())
-    get_beautiful_permutation(n)
+    if n == 1:
+        print(1)
+    else:
+        get_beautiful_permutation(n)
