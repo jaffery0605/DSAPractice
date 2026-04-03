@@ -1,14 +1,17 @@
-def get_distinct_count(n, n_arr):
-    res = []
-    for el in n_arr:
-        if el not in res:
-            res.append(el)
-    print(len(res))
-
-if __name__ == "__main__":
+import sys
+input = sys.stdin.readline
+output = sys.stdout.write # must be string
+ 
+ 
+def get_distinct_count():
     n = int(input())
-    n_arr = [int(x) for x in input().split()]
-    if n == 1:
-        print(1)
-    else:
-        get_distinct_count(n, n_arr)
+    arr = sorted(int(x) for x in input().split())
+    ans = 1
+    for i in range(1, n):
+        if arr[i] != arr[i-1]:
+            ans += 1
+ 
+    output(f"{ans}")
+ 
+
+get_distinct_count()
